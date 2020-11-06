@@ -10,13 +10,14 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import reducer from './reducer';
+import Routes from './component/routes';
 
 let store = createStore(reducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <Routes />
     </Router>
   </Provider>,
   document.getElementById('root')
