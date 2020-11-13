@@ -1,11 +1,17 @@
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './component/NavBar';
+import Home from './container/Home';
 
 const App = () => {
   return (
     <div>
       <NavBar />
-      Body
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
   )
 }
