@@ -1,13 +1,17 @@
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from '../App';
+import Home from '../container/Home';
+import Login from '../container/Login';
 
 const Routes = () => {
     return (
-        <Switch>
-            <Route exact path="/" component={App} />
-            <Route render={() => <Redirect to="/" />} />
-        </Switch>
+        <Router>
+            <Switch>
+                <Route exact path="/" component={App} />
+                <Route path="/login" component={Login} />
+            </Switch>
+        </Router>
     )
 }
 

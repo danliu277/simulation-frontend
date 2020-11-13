@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter as Router } from 'react-router-dom';
-
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
@@ -15,9 +13,7 @@ let store = createStore(reducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <Routes />
-    </Router>
+    <Routes />
   </Provider>,
   document.getElementById('root')
 );
