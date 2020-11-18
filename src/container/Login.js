@@ -3,9 +3,10 @@ const Login = () => {
     <div>
         <form>
           <label>Username</label>
-          <input />
+          <input type="text" name="username" />
           <label>Password</label>
-          <input />
+          <input type="password" name="password" />
+          <input type="submit" value="login" />
         </form>
     </div>
   )
