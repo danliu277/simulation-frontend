@@ -1,7 +1,12 @@
 const Login = () => {
   return (
     <div>
-        Login Page
+        <form>
+          <label>Username</label>
+          <input />
+          <label>Password</label>
+          <input />
+        </form>
     </div>
   )
 }
