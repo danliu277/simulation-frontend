@@ -7,7 +7,7 @@ import Login from './container/Login';
 const App = (props) => {
   return (
     <div>
-      <NavBar />
+      <NavBar {...props} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
