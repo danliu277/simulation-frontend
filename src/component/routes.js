@@ -6,7 +6,7 @@ const Routes = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/" component={App} />
+                <Route path="/" render={(props) => <App {...props} />} />
             </Switch>
         </Router>
     )

@@ -4,7 +4,7 @@ import NavBar from './component/NavBar';
 import Home from './container/Home';
 import Login from './container/Login';
 
-const App = () => {
+const App = (props) => {
   return (
     <div>
       <NavBar />
