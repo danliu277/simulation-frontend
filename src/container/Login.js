@@ -12,6 +12,16 @@ const Login = () => {
     setPassword(event.target.value)
   }
 
+  const login = (event) => {
+    event.preventDefault()
+    console.log("login")
+  }
+
+  const register = (event) => {
+    event.preventDefault()
+    console.log("register")
+  }
+
   return (
     <div>
       <form>
@@ -19,8 +29,8 @@ const Login = () => {
         <input type="text" name="username" value={username} onChange={handleUsername} />
         <label>Password</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />
-        <input type="submit" value="Login" />
-        <input type="submit" value="Register" />
+        <input type="submit" value="Login" onClick={login} />
+        <input type="submit" value="Register" onClick={register} />
       </form>
     </div>
   )
