@@ -19,7 +19,8 @@ const Login = () => {
         <input type="text" name="username" value={username} onChange={handleUsername} />
         <label>Password</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />
-        <input type="submit" value="login" />
+        <input type="submit" value="Login" />
+        <input type="submit" value="Register" />
       </form>
     </div>
   )
