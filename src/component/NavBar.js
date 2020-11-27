@@ -13,10 +13,10 @@ const NavBar = (props) => {
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
-                    <li className={`nav-item ${props.location && props.location.pathname == '/' && 'active'}`}>
+                    <li className={`nav-item ${props.location && props.location.pathname === '/' && 'active'}`}>
                         <Link to="/" className="nav-link">Home</Link>
                     </li>
-                    <li className={`nav-item ${props.location && props.location.pathname == '/login' && 'active'}`}>
+                    <li className={`nav-item ${props.location && props.location.pathname === '/login' && 'active'}`}>
                         <Link to="/login" className="nav-link">Login</Link>
                     </li>
                 </ul>
