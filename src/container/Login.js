@@ -2,7 +2,7 @@ import { useState } from "react";
 import { connect } from 'react-redux';
 import { registerActionCreator, loginActionCreator } from '../action/actionCreator'
 
-const Login = () => {
+const Login = (props) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -16,12 +16,12 @@ const Login = () => {
 
   const login = (event) => {
     event.preventDefault()
-    console.log("login")
+    props.login(username, password)
   }
 
   const register = (event) => {
     event.preventDefault()
-    console.log("register")
+    props.register(username, password)
   }
 
   return (
@@ -31,8 +31,8 @@ const Login = () => {
         <input type="text" name="username" value={username} onChange={handleUsername} />
         <label>Password</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />
-        <input type="submit" value="Login" onClick={login} />
-        <input type="submit" value="Register" onClick={register} />
+        <input type="submit" value="Login" onClick={(e) => login(e)} />
+        <input type="submit" value="Register" onClick={(e) => register(e)} />
       </form>
     </div>
   )
@@ -46,8 +46,8 @@ const msp = state => {
 
 const mdp = (dispatch) => {
   return {
-      login: (username, password) => dispatch(registerActionCreator(username, password)),
-      register: (username, password) => dispatch(loginActionCreator(username, password))
+      login: (username, password) => dispatch(loginActionCreator(username, password)),
+      register: (username, password) => dispatch(registerActionCreator(username, password))
   }
 }
 
