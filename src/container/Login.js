@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { connect } from 'react-redux';
+import { registerActionCreator, loginActionCreator } from '../action/actionCreator'
 
 const Login = () => {
   const [username, setUsername] = useState("")
@@ -36,4 +38,17 @@ const Login = () => {
   )
 }
 
-export default Login;
+const msp = state => {
+  return {
+      user: state.user
+  }
+}
+
+const mdp = (dispatch) => {
+  return {
+      login: (username, password) => dispatch(registerActionCreator(username, password)),
+      register: (username, password) => dispatch(loginActionCreator(username, password))
+  }
+}
+
+export default connect(msp, mdp)(Login)
