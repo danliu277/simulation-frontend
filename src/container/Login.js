@@ -29,8 +29,10 @@ const Login = (props) => {
       <form>
         <label>Username</label>
         <input type="text" name="username" value={username} onChange={handleUsername} />
+        <br />
         <label>Password</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />
+        <br />
         <input type="submit" value="Login" onClick={(e) => login(e)} />
         <input type="submit" value="Register" onClick={(e) => register(e)} />
       </form>
