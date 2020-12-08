@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 import { registerActionCreator, loginActionCreator } from '../action/actionCreator'
 
 const Login = (props) => {
+  useEffect(() => {
+    if(props.user)
+      props.history.push("/profile")
+  }, [props.user])
+
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
