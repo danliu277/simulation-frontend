@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { connect } from 'react-redux';
-import { registerActionCreator, loginActionCreator } from '../action/actionCreator'
+import { setUserActionCreator } from '../action/actionCreator'
 
 const Profile = (props) => {
 
   return (
     <div>
       Profile
+      <input type="submit" value="Log Out" onClick={() => props.logout()} />
     </div>
   )
 }
@@ -19,6 +20,7 @@ const msp = state => {
 
 const mdp = (dispatch) => {
   return {
+    logout: () => dispatch(setUserActionCreator(null)),
   }
 }
 
