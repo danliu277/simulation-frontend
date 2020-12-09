@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 const NavBar = (props) => {
@@ -16,9 +17,15 @@ const NavBar = (props) => {
                     <li className={`nav-item ${props.location && props.location.pathname === '/' && 'active'}`}>
                         <Link to="/" className="nav-link">Home</Link>
                     </li>
-                    <li className={`nav-item ${props.location && props.location.pathname === '/login' && 'active'}`}>
-                        <Link to="/login" className="nav-link">Login</Link>
-                    </li>
+                    {
+                        props.user ?
+                        <li className={`nav-item ${props.location && props.location.pathname === '/profile' && 'active'}`}>
+                            <Link to="/profile" className="nav-link">Profile</Link>
+                        </li> :
+                        <li className={`nav-item ${props.location && props.location.pathname === '/login' && 'active'}`}>
+                            <Link to="/login" className="nav-link">Login</Link>
+                        </li>
+                    }
                 </ul>
                 <form className="form-inline my-2 my-lg-0">
                     <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
@@ -29,4 +36,10 @@ const NavBar = (props) => {
     )
 }
 
-export default NavBar
+const msp = state => {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(msp)(NavBar)
