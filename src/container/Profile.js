@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connect } from 'react-redux';
 import { setUserActionCreator } from '../action/actionCreator'
 
@@ -6,7 +6,7 @@ const Profile = (props) => {
   useEffect(() => {
     if(!props.user)
       props.history.push("/login")
-  }, [props.user])
+  }, [props.user, props.history])
 
   return (
     <div>

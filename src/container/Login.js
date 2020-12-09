@@ -6,7 +6,7 @@ const Login = (props) => {
   useEffect(() => {
     if(props.user)
       props.history.push("/profile")
-  }, [props.user])
+  }, [props.user, props.history])
 
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
